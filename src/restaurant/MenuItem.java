@@ -1,10 +1,18 @@
 package restaurant;
 
 public class MenuItem {
+    private String name;
     private double price;
     private String description;
     private String category;
     private boolean isNew;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String aName) {
+        name = aName;
+    }
 
     public double getPrice() {
         return price;

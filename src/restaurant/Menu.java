@@ -19,4 +19,29 @@ public class Menu {
     public void setLastUpdatedDate(Date newDate) {
         lastUpdatedDate = newDate;
     }
+
+    public void addMenuItem (MenuItem item) {
+        itemList.add(item);
+    }
+
+    public void removeMenuItem (String itemName) {
+        for (int i = 0; i < itemList.size(); i++) {
+            String menuItemName = itemList.get(i).getName();
+            if (itemName == menuItemName) {
+                itemList.remove(i);
+                break;
+            }
+        }
+        printFullMenu();
+    }
+
+    public void printFullMenu() {
+        for (int i = 0; i < itemList.size(); i++) {
+            printMenuItem(i);
+        }
+    }
+    public void printMenuItem(int i) {
+        System.out.println(i+1 + ". " + itemList.get(i).getName() + " - $" +itemList.get(i).getPrice() + "\n" + itemList.get(i).getDescription());
+    }
+
 }
